@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie List App</title>
+    <title>🎬 Neon Movie Tracker 🎬</title>
     <style>
         * {
             margin: 0;
@@ -12,86 +12,116 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Poppins', sans-serif;
+            background: url('data:image/jpeg;base64,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') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            backdrop-filter: blur(5px);
         }
 
         .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(18, 24, 38, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 195, 255, 0.8);
             text-align: center;
-            width: 300px;
+            width: 450px;
+            backdrop-filter: blur(10px);
         }
 
         h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
+            margin-bottom: 15px;
+            font-size: 28px;
+            text-shadow: 0 0 7px cyan, 0 0 15px cyan;
         }
 
         input {
-            width: 80%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            width: calc(100% - 24px);
+            padding: 14px;
+            margin-bottom: 12px;
+            border: none;
+            border-radius: 8px;
             font-size: 16px;
+            background: #1e293b;
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            box-shadow: 0 0 10px cyan;
         }
 
         button {
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: #5cb85c;
-            color: white;
+            padding: 12px 26px;
+            margin: 8px;
+            background: cyan;
+            color: black;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
+            box-shadow: 0 0 15px cyan;
+            transition: 0.3s;
+            white-space: nowrap;
         }
 
         button:hover {
-            background-color: #4cae4c;
+            background: #00e1ff;
+            box-shadow: 0 0 20px cyan;
+            transform: scale(1.05);
         }
 
         ul {
             list-style-type: none;
             padding: 0;
-            margin: 10px 0;
+            margin: 12px 0;
         }
 
         li {
-            background-color: #f1f1f1;
-            margin: 5px 0;
-            padding: 8px;
-            border-radius: 4px;
+            background: #1e293b;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 8px;
             cursor: pointer;
+            transition: 0.3s;
+            font-size: 18px;
         }
 
         li:hover {
-            background-color: #ddd;
+            background: cyan;
+            color: black;
+            transform: scale(1.05);
         }
 
         #movieCount {
-            margin-top: 10px;
+            margin-top: 14px;
             font-weight: bold;
-            color: #333;
+            font-size: 18px;
+            color: cyan;
+        }
+
+        #trendingMovies li::before {
+            content: "🔥 ";
+            color: cyan;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Favorite Movies</h1>
+        <h1>🎬 Neon Movie Tracker 🎬</h1>
         <input type="text" id="movieInput" placeholder="Enter a movie name">
         <button id="addMovieBtn">Add Movie</button>
         <ul id="movieList"></ul>
         <button id="clearListBtn">Clear List</button>
         <p id="movieCount">Total Movies: 0</p>
+        <h2>🔥 Trending Movies</h2>
+        <ul id="trendingMovies"></ul>
     </div>
 
     <script>
@@ -102,6 +132,7 @@
         const movieList = document.getElementById('movieList');
         const clearListBtn = document.getElementById('clearListBtn');
         const movieCount = document.getElementById('movieCount');
+        const trendingMovies = document.getElementById('trendingMovies');
 
         function updateMovieList() {
             movieList.innerHTML = '';
@@ -135,10 +166,28 @@
             updateMovieList();
         }
 
+        async function fetchTrendingMovies() {
+            try {
+                const response = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=YOUR_API_KEY');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                trendingMovies.innerHTML = '';
+                data.results.slice(0, 5).forEach(movie => {
+                    const li = document.createElement('li');
+                    li.textContent = movie.title;
+                    trendingMovies.appendChild(li);
+                });
+            } catch (error) {
+                console.error("Error fetching movies:", error);
+                trendingMovies.innerHTML = '<li>⚠️🚀 Glitch in the Spotlight 🎬💥</li>';
+            }
+        }
+
         addMovieBtn.addEventListener('click', addMovie);
         clearListBtn.addEventListener('click', clearMovieList);
-
-        updateMovieList();
+        fetchTrendingMovies();
     </script>
 </body>
 </html>
