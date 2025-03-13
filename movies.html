@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        li {
+            background-color: #f1f1f1;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #ddd;
+        }
+
+        #movieCount {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Favorite Movies</h1>
+        <input type="text" id="movieInput" placeholder="Enter a movie name">
+        <button id="addMovieBtn">Add Movie</button>
+        <ul id="movieList"></ul>
+        <button id="clearListBtn">Clear List</button>
+        <p id="movieCount">Total Movies: 0</p>
+    </div>
+
+    <script>
+        let movies = [];
+
+        const movieInput = document.getElementById('movieInput');
+        const addMovieBtn = document.getElementById('addMovieBtn');
+        const movieList = document.getElementById('movieList');
+        const clearListBtn = document.getElementById('clearListBtn');
+        const movieCount = document.getElementById('movieCount');
+
+        function updateMovieList() {
+            movieList.innerHTML = '';
+            movies.forEach((movie, index) => {
+                const li = document.createElement('li');
+                li.textContent = movie;
+                li.addEventListener('click', () => removeMovie(index));
+                movieList.appendChild(li);
+            });
+            movieCount.textContent = `Total Movies: ${movies.length}`;
+        }
+
+        function addMovie() {
+            const movieName = movieInput.value.trim();
+            if (movieName === '') {
+                alert('Please enter a movie name.');
+                return;
+            }
+            movies.push(movieName);
+            movieInput.value = '';
+            updateMovieList();
+        }
+
+        function removeMovie(index) {
+            movies.splice(index, 1);
+            updateMovieList();
+        }
+
+        function clearMovieList() {
+            movies = [];
+            updateMovieList();
+        }
+
+        addMovieBtn.addEventListener('click', addMovie);
+        clearListBtn.addEventListener('click', clearMovieList);
+
+        updateMovieList();
+    </script>
+</body>
+</html>
